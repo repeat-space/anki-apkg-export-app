@@ -32,7 +32,7 @@
     "url": "git+https://github.com/ewnd9/anki-apkg-export-app.git"
   },
   "scripts": {
-    "build": "rm -rf dist && NODE_ENV=production wbuild --x-vendors=react",
+    "build": "rm -rf dist && NODE_ENV=production wbuild --x-vendors=react --x-public-path=\"/anki-apkg-export-app/\"",
     "lint": "eslint src/**/*.js",
     "prepush": "npm run lint && npm test",
     "start": "wserve",
