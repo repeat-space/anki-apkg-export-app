@@ -1,0 +1,65 @@
+@import '../../variables.css';
+
+.container {
+  padding-top: 100px;
+  width: 800px;
+  margin: 0 auto;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.panels {
+  display: flex;
+  flex-direction: row;
+
+  margin-bottom: 20px;
+}
+
+.panels > textarea {
+  width: 30%;
+}
+
+.panels > table {
+  width: 70%;
+}
+
+.container > div {
+  font-size: 25px;
+}
+
+.table {
+  border: 1px solid black;
+}
+
+.table td {
+  border: 1px solid black;
+}
+
+.btn {
+  -webkit-font-smoothing: antialiased;
+  display: inline-block;
+  padding: 11px 34px;
+  border: 0;
+  border-radius: 4px;
+  color: white;
+  background-color: #007dc6;
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 1;
+  text-align: center;
+  vertical-align: middle;
+  cursor: pointer;
+}
+
+.btn:hover {
+  background-color: #3da1e0;
+}
+
+.btn.disabled {
+  background-color: #007dc6;
+  cursor: default;
+  opacity: .5;
+}

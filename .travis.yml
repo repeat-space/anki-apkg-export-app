@@ -1,0 +1,8 @@
+language: node_js
+node_js:
+  - '5'
+script: bash ./deploy-gh-pages.sh
+env:
+  global:
+  - GH_REF: github.com/ewnd9/anki-apkg-export-app.git
+  - secure: F3VRIO5D3U2q0VYZ9ziCq6z7j4T9X6a4nj+raioAd1FESr6ZdZ0bGvYxjFqo2Pzar15tYIJNrY8pu4f0M9EkzaVfqHaWpKEOCrY1oKeQGax+p8jJKg1uU/XRiAQILTE8/nNYS4NP+GeE/Sd3cehICOUCt2MyCzjUYjyyN3EE+Z5ZfPxuwcpnMU2NzGuLUaNoV3BXDKhduadSjE6IbW39E4vhFwImqGUmq+w/THId6ITRdB2MjSnMxetPYuRmDMyql0bQL3eUAXpClOMrVKDmtOnxvAVHwwPtEstRxAFxQ6M0zNOlLJ5lyjfxHuszUwEf2Iovy9D/And6q3pjY1zK22wX/3wK7LtZiu5Lf+IfZ82BVuOALsMP1J+w3GqTMZSZBvrrUxad8ikmF32jMzmIro60Jo/SXEyZhbk8VbmFBxXrXentwuMfWAqRK7mMuS3Z+dXI6RbjLQIusA3ivjSOldlCT/CI9QPRhDs8vOuKQWNLG+jAwtDKIVa1BT+aNKE6DuV+4qbSpLkfKh1BHFnPIx8i8XdwoP59oA9d5ALOrchGAG2BxNYBe7u9PnnUfUvl+8elSFM6+cicw5TCwuU4ShWKPSVyYWjRCtwSEBU0xvq/Eel6nkEwQ6xbq9Y+JFT7bwRRv7OsnRXmymemZXGrK35o5kenMBGW28wNTmvyhyw=
