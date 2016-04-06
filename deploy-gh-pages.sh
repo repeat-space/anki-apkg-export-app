@@ -2,7 +2,9 @@
 
 rm -rf dist
 npm run build
-node render-once > dist/index.html
+
+node render-once > index.html
+mv index.html dist/index.html
 
 cd dist
 
