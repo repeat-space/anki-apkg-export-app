@@ -2,6 +2,7 @@
 
 rm -rf dist
 npm run build
+node render-once > dist/index.html
 
 cd dist
 
