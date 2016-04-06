@@ -14,28 +14,43 @@
 .panels {
   display: flex;
   flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  width: 100%;
 
   margin-bottom: 20px;
 }
 
 .panels > textarea {
-  width: 30%;
+  width: 350px;
+
+  min-width: 200px;
+  min-height: 150px;
 }
 
 .panels > table {
-  width: 70%;
+  width: 400px;
 }
 
-.container > div {
-  font-size: 25px;
+@media screen and (max-width: 800px) {
+  .container {
+    width: 100%;
+    padding: 10px;
+  }
+
+  .panels > textarea, .panels > table {
+    width: 100%;
+  }
 }
+
 
 .table {
-  border: 1px solid black;
+  border-collapse: collapse;
 }
 
 .table td {
-  border: 1px solid black;
+  padding: 5px;
+  border: 1px solid var(--darkGreyColor);
 }
 
 .btn {
@@ -58,8 +73,17 @@
   background-color: #3da1e0;
 }
 
-.btn.disabled {
+.btnDisabled {
   background-color: #007dc6;
   cursor: default;
   opacity: .5;
+}
+
+.footer {
+  width: 30%;
+  text-align: center;
+  border-top: var(--darkGreyColor) solid 1px;
+  padding: 15px 0 30px;
+  margin-top: 30px;
+  font-size: 10pt;
 }

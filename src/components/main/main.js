@@ -3,17 +3,40 @@ import styles from './style.css';
 
 export default React.createClass({
   getInitialState() {
-    return { cards: [], delimiter: ' - ' }
+    const text = [
+      '# first group of words',
+      'front side - back side',
+      '',
+      '# second group of words',
+      'word - explanaition'
+    ].join('\n');
+
+    const delimiter = ' - ';
+
+    return { text, delimiter, cards: this.parseText(text, delimiter) }
   },
-  onChange(event) {
+  parseText(text, delimiter) {
+    return text
+     .split('\n')
+     .map(line => {
+       if (line[0] === '#') {
+         return;
+       }
+
+       const [front, back] = line.trim().split(delimiter || this.state.delimiter);
+
+       if (front && back) {
+         return { front, back };
+       }
+     })
+     .filter(line => !!line);
+  },
+  onTextChange(e) {
+    const text = e.target.value;
+
     this.setState({
-      cards: event.target.value
-        .split('\n')
-        .filter(line => line.trim().length > 0 && line[0] !== '#')
-        .map(line => {
-          const [front, back] = line.split(this.state.delimiter);
-          return { front, back };
-        })
+      text: text,
+      cards: this.parseText(text)
     });
   },
   onClick() {
@@ -28,7 +51,7 @@ export default React.createClass({
     return (
       <div className={styles.container}>
         <div className={styles.panels}>
-          <textarea className={styles.textarea} onChange={this.onChange} ref="myTextarea" />
+          <textarea className={styles.textarea} onChange={this.onTextChange} ref="myTextarea" value={this.state.text} />
           { this.state.cards.length > 0 && (
             <table className={styles.table}>
               <tbody>
@@ -45,9 +68,18 @@ export default React.createClass({
           ) || ''}
         </div>
         <div>
-          <button className={styles.btn} onClick={this.onClick}>
-            Generate apkg
-          </button>
+          { this.state.cards.length > 0 && (
+            <button className={styles.btn} onClick={this.onClick}>
+              {`Generate apkg with ${this.state.cards.length} card${this.state.cards.length === 1 ? '' : 's'}`}
+            </button>
+          ) || (
+            <button className={`${styles.btn} ${styles.btnDisabled}`} disabled={true}>
+              Generate apkg
+            </button>
+          )}
+        </div>
+        <div className={styles.footer}>
+          Made by <a href="https://github.com/ewnd9" target="_blank">@ewnd9</a>
         </div>
       </div>
     );
