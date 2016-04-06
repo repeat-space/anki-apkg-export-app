@@ -52,7 +52,8 @@ export default React.createClass({
       <div className={styles.container}>
         <div className={styles.panels}>
           <textarea className={styles.textarea} onChange={this.onTextChange} ref="myTextarea" value={this.state.text} />
-          { this.state.cards.length > 0 && (
+
+        { this.state.cards.length > 0 && (
             <table className={styles.table}>
               <tbody>
                 {
@@ -65,7 +66,13 @@ export default React.createClass({
                 }
               </tbody>
             </table>
-          ) || ''}
+          ) || (
+            <table className={styles.table}>
+              <tbody>
+                <tr><td>No cards</td></tr>
+              </tbody>
+            </table>
+          )}
         </div>
         <div>
           { this.state.cards.length > 0 && (

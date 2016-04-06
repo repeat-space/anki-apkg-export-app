@@ -43,7 +43,6 @@
   }
 }
 
-
 .table {
   border-collapse: collapse;
 }
@@ -51,6 +50,14 @@
 .table td {
   padding: 5px;
   border: 1px solid var(--darkGreyColor);
+}
+
+.table td:nth-child(1) {
+  width: 30%;
+}
+
+.table td:nth-child(2) {
+  width: 70%;
 }
 
 .btn {

@@ -1,6 +1,8 @@
 # anki-apkg-export-app
 
-[WIP] Online anki decks generation
+[![Build Status](https://travis-ci.org/ewnd9/anki-apkg-export-app.svg?branch=master)](https://travis-ci.org/ewnd9/anki-apkg-export-app)
+
+Online anki decks generation
 
 ## Install
 
