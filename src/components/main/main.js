@@ -8,7 +8,7 @@ export default React.createClass({
       'front side - back side',
       '',
       '# second group of words',
-      'word - explanaition'
+      'word - explanation'
     ].join('\n');
 
     const delimiter = ' - ';
