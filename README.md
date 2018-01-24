@@ -1,6 +1,6 @@
 # anki-apkg-export-app
 
-[![Build Status](https://travis-ci.org/repeat-space/anki-apkg-export-app.svg?branch=master)](https://travis-ci.org/ewnd9/anki-apkg-export-app)
+[![Build Status](https://travis-ci.org/repeat-space/anki-apkg-export-app.svg?branch=master)](https://travis-ci.org/repeat-space/anki-apkg-export-app)
 [![Gitter chat](https://badges.gitter.im/gitterHQ/gitter.svg)](https://gitter.im/repeat-space/Lobby)
 
 Online anki decks generation
