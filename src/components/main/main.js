@@ -3,7 +3,7 @@ import styles from './style.css';
 
 export default React.createClass({
   getInitialState() {
-    const text = [
+    const text = window.localStorage.getItem('text') || [
       '# first group of words',
       'front side - back side',
       '',
@@ -38,6 +38,8 @@ export default React.createClass({
       text: text,
       cards: this.parseText(text)
     });
+
+    window.localStorage.setItem('text', text)
   },
   onClick() {
     const name = 'Anki2 node-browser-deck';
@@ -46,6 +48,7 @@ export default React.createClass({
       const generatePkg = require('./generate-pkg');
       generatePkg.default(name, this.state.cards);
     });
+    window.localStorage.removeItem('text')
   },
   render() {
     return (
